@@ -6,199 +6,304 @@
     <title>The Keychain Shop | Student Made</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        .product-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
-        .glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
-        html { scroll-behavior: smooth; }
+        :root {
+            --primary: #6D061E;
+            --secondary: #faf4e8;
+            --accent: #8D3B47;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.015em;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.02em;
+        }
+        
+        .product-card:hover { 
+            transform: translateY(-8px); 
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 30px rgba(109, 6, 30, 0.1);
+        }
+        
+        .glass { 
+            background: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px); 
+        }
+        
+        html { 
+            scroll-behavior: smooth; 
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #5a0519;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(109, 6, 30, 0.2);
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        
+        .border-primary {
+            border-color: var(--primary);
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .text-accent {
+            color: var(--accent);
+        }
+        
+        .bg-accent {
+            background-color: var(--accent);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(109, 6, 30, 0.2), transparent);
+            margin: 3rem auto;
+            max-width: 800px;
+        }
+        
+        .badge {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-secondary text-gray-800">
 
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 glass border-b border-gray-200 py-4 px-6 flex justify-between items-center">
-        <h1 class="text-xl font-bold tracking-tight text-indigo-600">KEYCHAIN<span class="text-gray-900">STUDIO</span></h1>
-        <div class="space-x-4">
-            <a href="#shop" class="text-sm font-medium hover:text-indigo-600">Shop</a>
-            <a href="#contact" class="text-sm font-medium hover:text-indigo-600">Contact</a>
+        <h1 class="text-xl font-bold tracking-tight">
+            <span class="text-primary">KEYCHAIN</span>
+            <span class="text-gray-800">STUDIO</span>
+        </h1>
+        <div class="space-x-6">
+            <a href="#shop" class="text-sm font-medium hover:text-primary transition-colors duration-200">Shop</a>
+            <a href="#about" class="text-sm font-medium hover:text-primary transition-colors duration-200">About</a>
+            <a href="#contact" class="text-sm font-medium hover:text-primary transition-colors duration-200">Contact</a>
         </div>
     </nav>
 
     <!-- Hero -->
-    <header class="py-16 px-6 text-center bg-white">
-        <div class="max-w-2xl mx-auto">
-            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Student Startup</span>
-            <h2 class="text-4xl font-extrabold mt-4 mb-6 leading-tight">Personalized Keychains for your Everyday Carry.</h2>
-            <p class="text-gray-600 mb-8 text-lg">Handmade on campus. Custom designs available. Free delivery to all campus hostels!</p>
-            <a href="#shop" class="inline-block bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-700 shadow-lg transition transform hover:scale-105">View Catalog</a>
+    <header class="py-20 px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-secondary z-0"></div>
+        <div class="max-w-3xl mx-auto relative z-10">
+            <span class="badge bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wide">Student Startup</span>
+            <h2 class="text-5xl font-bold mt-6 mb-8 leading-tight text-gray-900">Personalized Keychains<br>for your Everyday Carry.</h2>
+            <p class="text-gray-600 mb-10 text-lg leading-relaxed max-w-2xl mx-auto">Handmade on campus with attention to detail. Custom designs available. Free delivery to all campus hostels!</p>
+            <a href="#shop" class="btn-primary text-white px-10 py-4 rounded-lg font-semibold text-lg shadow-lg inline-block">View Collection</a>
         </div>
     </header>
 
     <!-- Product Grid -->
-    <section id="shop" class="py-12 px-6 max-w-6xl mx-auto">
-        <div class="flex items-center justify-between mb-8">
-            <h3 class="text-2xl font-bold flex items-center"><i class="fas fa-stars text-yellow-400 mr-2"></i> Shop Collection</h3>
+    <section id="shop" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h3 class="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center">
+                <i class="fas fa-stars text-primary mr-3"></i> Shop Our Collection
+            </h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">Each keychain is crafted with care, combining functionality with personal expression.</p>
         </div>
         
         <!-- Grid: 1 column on mobile, 2 on tablet, 3 on desktop -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             
             <!-- Product 1 -->
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
-                <div class="h-64 bg-gray-200 flex items-center justify-center relative">
-                    <span class="absolute top-3 left-3 bg-black text-white px-2 py-1 text-xs rounded font-bold">New</span>
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                <div class="h-64 bg-gray-100 flex items-center justify-center relative">
+                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge">New</span>
                     <i class="fas fa-key text-gray-400 text-5xl"></i>
                 </div>
-                <div class="p-6 flex-grow">
-                    <h4 class="font-bold text-lg mb-1">The Classic Name-Tag</h4>
-                    <p class="text-gray-500 text-sm mb-4">Durable acrylic, customized with your name or student ID.</p>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">The Classic Name-Tag</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Durable acrylic, customized with your name or student ID. Simple and elegant.</p>
                 </div>
-                <div class="px-6 pb-6 mt-auto">
+                <div class="px-7 pb-7 mt-auto">
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-indigo-600">$4.99</span>
-                        <button onclick="orderWhatsApp('Classic Name-Tag')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center gap-2">
-                            <i class="fab fa-whatsapp"></i> Buy
+                        <span class="text-2xl font-bold text-primary">$4.99</span>
+                        <button onclick="orderWhatsApp('Classic Name-Tag')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                            <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 2 -->
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="h-64 bg-pink-50 flex items-center justify-center">
-                    <i class="fas fa-heart text-pink-400 text-5xl"></i>
+                    <i class="fas fa-heart text-accent text-5xl"></i>
                 </div>
-                <div class="p-6 flex-grow">
-                    <h4 class="font-bold text-lg mb-1">Bestie Matching Set</h4>
-                    <p class="text-gray-500 text-sm mb-4">Two halves of a heart. Perfect for roommates and best friends.</p>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Bestie Matching Set</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Two halves of a heart. Perfect for roommates and best friends.</p>
                 </div>
-                <div class="px-6 pb-6 mt-auto">
+                <div class="px-7 pb-7 mt-auto">
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-indigo-600">$7.99</span>
-                        <button onclick="orderWhatsApp('Bestie Set')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center gap-2">
-                            <i class="fab fa-whatsapp"></i> Buy
+                        <span class="text-2xl font-bold text-primary">$7.99</span>
+                        <button onclick="orderWhatsApp('Bestie Set')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                            <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 3 -->
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="h-64 bg-indigo-50 flex items-center justify-center">
-                    <i class="fas fa-graduation-cap text-indigo-400 text-5xl"></i>
+                    <i class="fas fa-graduation-cap text-primary text-5xl"></i>
                 </div>
-                <div class="p-6 flex-grow">
-                    <h4 class="font-bold text-lg mb-1">Class of 2026 Special</h4>
-                    <p class="text-gray-500 text-sm mb-4">Engraved wood with your graduation year. A great memento.</p>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Class of 2026 Special</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Engraved wood with your graduation year. A timeless memento.</p>
                 </div>
-                <div class="px-6 pb-6 mt-auto">
+                <div class="px-7 pb-7 mt-auto">
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-indigo-600">$5.50</span>
-                        <button onclick="orderWhatsApp('Grad Special')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center gap-2">
-                            <i class="fab fa-whatsapp"></i> Buy
+                        <span class="text-2xl font-bold text-primary">$5.50</span>
+                        <button onclick="orderWhatsApp('Grad Special')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                            <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 4: Anime Theme -->
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="h-64 bg-purple-50 flex items-center justify-center relative">
-                    <span class="absolute top-3 right-3 bg-indigo-600 text-white px-2 py-1 text-xs rounded font-bold italic">Bestseller</span>
+                    <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 text-xs rounded-full font-bold badge">Bestseller</span>
                     <i class="fas fa-bolt text-purple-400 text-5xl"></i>
                 </div>
-                <div class="p-6 flex-grow">
-                    <h4 class="font-bold text-lg mb-1">Anime Essence Collection</h4>
-                    <p class="text-gray-500 text-sm mb-4">Transparent acrylic featuring your favorite characters and quotes.</p>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Anime Essence Collection</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Transparent acrylic featuring your favorite characters and quotes.</p>
                 </div>
-                <div class="px-6 pb-6 mt-auto">
+                <div class="px-7 pb-7 mt-auto">
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-indigo-600">$6.50</span>
-                        <button onclick="orderWhatsApp('Anime Essence')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center gap-2">
-                            <i class="fab fa-whatsapp"></i> Buy
+                        <span class="text-2xl font-bold text-primary">$6.50</span>
+                        <button onclick="orderWhatsApp('Anime Essence')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                            <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 5: Minimalist Leather -->
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="h-64 bg-orange-50 flex items-center justify-center">
-                    <i class="fas fa-address-card text-orange-800 text-5xl"></i>
+                    <i class="fas fa-address-card text-primary text-5xl"></i>
                 </div>
-                <div class="p-6 flex-grow">
-                    <h4 class="font-bold text-lg mb-1">Minimalist Faux-Leather</h4>
-                    <p class="text-gray-500 text-sm mb-4">Sophisticated and sleek. Available in Tan, Brown, and Black.</p>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Minimalist Faux-Leather</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Sophisticated and sleek. Available in Tan, Brown, and Black.</p>
                 </div>
-                <div class="px-6 pb-6 mt-auto">
+                <div class="px-7 pb-7 mt-auto">
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-indigo-600">$8.99</span>
-                        <button onclick="orderWhatsApp('Leather Minimalist')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center gap-2">
-                            <i class="fab fa-whatsapp"></i> Buy
+                        <span class="text-2xl font-bold text-primary">$8.99</span>
+                        <button onclick="orderWhatsApp('Leather Minimalist')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                            <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
                 </div>
             </div>
 
             <!-- Product 6: Photo Keychain -->
-            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="h-64 bg-blue-50 flex items-center justify-center">
-                    <i class="fas fa-camera-retro text-blue-400 text-5xl"></i>
+                    <i class="fas fa-camera-retro text-primary text-5xl"></i>
                 </div>
-                <div class="p-6 flex-grow">
-                    <h4 class="font-bold text-lg mb-1">Custom Photo Polaroid</h4>
-                    <p class="text-gray-500 text-sm mb-4">Send us your photo and we'll turn it into a mini Polaroid charm!</p>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Custom Photo Polaroid</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Send us your photo and we'll turn it into a mini Polaroid charm!</p>
                 </div>
-                <div class="px-6 pb-6 mt-auto">
+                <div class="px-7 pb-7 mt-auto">
                     <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-indigo-600">$7.50</span>
-                        <button onclick="orderWhatsApp('Photo Polaroid')" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center gap-2">
-                            <i class="fab fa-whatsapp"></i> Buy
+                        <span class="text-2xl font-bold text-primary">$7.50</span>
+                        <button onclick="orderWhatsApp('Photo Polaroid')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                            <i class="fab fa-whatsapp"></i> Order Now
                         </button>
                     </div>
                 </div>
             </div>
-
-            <!-- TIP: TO ADD MORE PRODUCTS, COPY ONE OF THE "product-card" DIVS ABOVE AND PASTE IT HERE -->
-
+        </div>
+        
+        <div class="text-center mt-16">
+            <p class="text-gray-600 text-lg">Want something truly unique? <a href="#contact" class="text-primary font-semibold hover:underline">Contact us for custom designs</a>.</p>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-12 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-                <i class="fas fa-truck text-indigo-600 text-3xl mb-4"></i>
-                <h5 class="font-bold mb-2">Campus Delivery</h5>
-                <p class="text-sm text-gray-600">Free delivery to all campus hostels within 24 hours.</p>
+    <div class="section-divider"></div>
+
+    <!-- About / Why Choose Us -->
+    <section id="about" class="py-16 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Keychain Studio</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto">We combine craftsmanship with personalization to create meaningful accessories for your everyday life.</p>
             </div>
-            <div>
-                <i class="fas fa-hand-holding-heart text-indigo-600 text-3xl mb-4"></i>
-                <h5 class="font-bold mb-2">Student Made</h5>
-                <p class="text-sm text-gray-600">Support your fellow student. Each item is handmade with care.</p>
-            </div>
-            <div>
-                <i class="fas fa-palette text-indigo-600 text-3xl mb-4"></i>
-                <h5 class="font-bold mb-2">Custom Orders</h5>
-                <p class="text-sm text-gray-600">DM us for custom designs, colors, or bulk club orders.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div class="p-8 rounded-2xl bg-secondary/50">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-truck text-primary text-2xl"></i>
+                    </div>
+                    <h5 class="font-bold text-xl mb-4 text-gray-900">Campus Delivery</h5>
+                    <p class="text-gray-600 leading-relaxed">Free delivery to all campus hostels within 24 hours. Convenient and reliable.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-secondary/50">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-hand-holding-heart text-primary text-2xl"></i>
+                    </div>
+                    <h5 class="font-bold text-xl mb-4 text-gray-900">Student Made</h5>
+                    <p class="text-gray-600 leading-relaxed">Support your fellow student. Each item is handmade with attention to detail and care.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-secondary/50">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-palette text-primary text-2xl"></i>
+                    </div>
+                    <h5 class="font-bold text-xl mb-4 text-gray-900">Custom Orders</h5>
+                    <p class="text-gray-600 leading-relaxed">DM us for custom designs, colors, or bulk club orders. Your vision, our craft.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact / About -->
-    <footer id="contact" class="bg-indigo-900 text-white py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-3xl font-bold mb-4">Ready to start?</h3>
-            <p class="text-indigo-200 mb-8 max-w-lg mx-auto">I can make keychains with any logo, photo, or text. Just send me a message and we'll chat about the design!</p>
+    <!-- Contact -->
+    <footer id="contact" class="bg-primary text-white py-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h3 class="text-4xl font-bold mb-6">Ready to personalize your keys?</h3>
+            <p class="text-white/80 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">I can create keychains with any logo, photo, or text. Just send me a message and we'll bring your design to life!</p>
             
-            <div class="flex justify-center space-x-8 mb-12">
-                <a href="www.instagram.com/epoxyfied_toothless" class="text-3xl hover:text-indigo-400 transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-3xl hover:text-indigo-400 transition"><i class="fab fa-tiktok"></i></a>
-                <!-- Update the link below with your phone number too -->
-                <a href="https://wa.me/1234567890" class="text-3xl hover:text-indigo-400 transition"><i class="fab fa-whatsapp"></i></a>
+            <div class="flex justify-center space-x-10 mb-14">
+                <a href="www.instagram.com/epoxyfied_toothless" class="text-3xl hover:text-secondary transition-transform duration-300 hover:scale-110">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-3xl hover:text-secondary transition-transform duration-300 hover:scale-110">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://wa.me/7205049701" class="text-3xl hover:text-secondary transition-transform duration-300 hover:scale-110">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </div>
             
-            <div class="border-t border-indigo-800 pt-8">
-                <p class="text-sm text-indigo-300">© 2024 Keychain Studio. Made with ❤️ by a Student for Students.</p>
+            <div class="border-t border-white/20 pt-10">
+                <p class="text-white/70 text-base">© 2024 Keychain Studio. Made with <i class="fas fa-heart text-accent mx-1"></i> by a Student for Students.</p>
             </div>
         </div>
     </footer>
@@ -209,13 +314,27 @@
          * @param {string} productName - The name of the item the user clicked
          */
         function orderWhatsApp(productName) {
-            // REPLACE "1234567890" WITH YOUR ACTUAL PHONE NUMBER (Include country code, e.g., 91XXXXXXXXXX)
             const phoneNumber = "7205049701"; 
-            const message = encodeURIComponent(`Hi! I'm interested in buying the "${productName}" keychain from your website. Is it still available?`);
+            const message = encodeURIComponent(`Hi! I'm interested in buying the "${productName}" keychain from Keychain Studio. Is it still available?`);
             window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
         }
+        
+        // Add smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
-
 </html>
-
