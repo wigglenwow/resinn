@@ -86,6 +86,38 @@
             font-weight: 600;
             letter-spacing: 0.05em;
         }
+        
+        /* Image cropping and fitting */
+        .product-image-container {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--secondary);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        
+        /* Loading state for images */
+        .image-loading {
+            background: linear-gradient(90deg, var(--secondary) 25%, #e8e0d0 50%, var(--secondary) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
 </head>
 <body class="bg-secondary text-gray-800">
@@ -128,9 +160,15 @@
             
             <!-- Product 1 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                <div class="h-64 bg-gray-100 flex items-center justify-center relative">
-                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge">New</span>
-                    <i class="fas fa-key text-gray-400 text-5xl"></i>
+                <div class="product-image-container">
+                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">New</span>
+                    <!-- Replace with your image path -->
+                    <img 
+                        src="DSC00296.JPG" 
+                        alt="The Classic Name-Tag Keychain" 
+                        class="product-image"
+                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Classic Name-Tag</text></svg>';"
+                    >
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">The Classic Name-Tag</h4>
@@ -148,8 +186,14 @@
 
             <!-- Product 2 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                <div class="h-64 bg-pink-50 flex items-center justify-center">
-                    <i class="fas fa-heart text-accent text-5xl"></i>
+                <div class="product-image-container">
+                    <!-- Replace with your image path -->
+                    <img 
+                        src="DSC00302.JPG" 
+                        alt="Bestie Matching Set Keychains" 
+                        class="product-image"
+                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Bestie Set</text></svg>';"
+                    >
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Bestie Matching Set</h4>
@@ -167,8 +211,14 @@
 
             <!-- Product 3 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                <div class="h-64 bg-indigo-50 flex items-center justify-center">
-                    <i class="fas fa-graduation-cap text-primary text-5xl"></i>
+                <div class="product-image-container">
+                    <!-- Replace with your image path -->
+                    <img 
+                        src="DSC00314.JPG" 
+                        alt="Class of 2026 Graduation Keychain" 
+                        class="product-image"
+                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Grad Special</text></svg>';"
+                    >
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Class of 2026 Special</h4>
@@ -186,9 +236,15 @@
 
             <!-- Product 4: Anime Theme -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                <div class="h-64 bg-purple-50 flex items-center justify-center relative">
-                    <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 text-xs rounded-full font-bold badge">Bestseller</span>
-                    <i class="fas fa-bolt text-purple-400 text-5xl"></i>
+                <div class="product-image-container">
+                    <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Bestseller</span>
+                    <!-- Replace with your image path -->
+                    <img 
+                        src="DSC00318.JPG" 
+                        alt="Anime Essence Collection Keychain" 
+                        class="product-image"
+                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Anime Essence</text></svg>';"
+                    >
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Anime Essence Collection</h4>
@@ -206,8 +262,14 @@
 
             <!-- Product 5: Minimalist Leather -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                <div class="h-64 bg-orange-50 flex items-center justify-center">
-                    <i class="fas fa-address-card text-primary text-5xl"></i>
+                <div class="product-image-container">
+                    <!-- Replace with your image path -->
+                    <img 
+                        src="DSC00323.JPG" 
+                        alt="Minimalist Faux-Leather Keychain" 
+                        class="product-image"
+                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Minimalist Leather</text></svg>';"
+                    >
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Minimalist Faux-Leather</h4>
@@ -225,8 +287,14 @@
 
             <!-- Product 6: Photo Keychain -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                <div class="h-64 bg-blue-50 flex items-center justify-center">
-                    <i class="fas fa-camera-retro text-primary text-5xl"></i>
+                <div class="product-image-container">
+                    <!-- Replace with your image path -->
+                    <img 
+                        src="DSC00324.JPG" 
+                        alt="Custom Photo Polaroid Keychain" 
+                        class="product-image"
+                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Photo Polaroid</text></svg>';"
+                    >
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Custom Photo Polaroid</h4>
@@ -332,6 +400,17 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
+                }
+            });
+        });
+        
+        // Preload images for better user experience
+        window.addEventListener('load', function() {
+            const images = document.querySelectorAll('.product-image');
+            images.forEach(img => {
+                // This helps with image loading and error handling
+                if(img.complete && img.naturalHeight !== 0) {
+                    img.style.opacity = '1';
                 }
             });
         });
