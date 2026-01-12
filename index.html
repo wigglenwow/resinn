@@ -161,6 +161,54 @@
         .rating-stars {
             color: #fbbf24;
         }
+        
+        /* Show more button animation */
+        .show-more-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .show-more-btn:hover i {
+            transform: translateY(3px);
+        }
+        
+        .hidden-products {
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .hidden-products.show {
+            display: grid;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .coming-soon {
+            opacity: 0.9;
+            filter: grayscale(20%);
+        }
+        
+        .coming-soon-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(109, 6, 30, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            z-index: 10;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body class="bg-secondary text-gray-800">
@@ -200,13 +248,12 @@
         </div>
         
         <!-- Grid: 1 column on mobile, 2 on tablet, 3 on desktop -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="product-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             
             <!-- Product 1 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
                     <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">New</span>
-                    <!-- Replace with your image path -->
                     <img 
                         src="DSC00296.JPG" 
                         alt="The Classic Name-Tag Keychain" 
@@ -231,7 +278,6 @@
             <!-- Product 2 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
-                    <!-- Replace with your image path -->
                     <img 
                         src="DSC00302.JPG" 
                         alt="Bestie Matching Set Keychains" 
@@ -256,7 +302,6 @@
             <!-- Product 3 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
-                    <!-- Replace with your image path -->
                     <img 
                         src="DSC00314.JPG" 
                         alt="Class of 2026 Graduation Keychain" 
@@ -282,7 +327,6 @@
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
                     <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Bestseller</span>
-                    <!-- Replace with your image path -->
                     <img 
                         src="DSC00318.JPG" 
                         alt="Anime Essence Collection Keychain" 
@@ -307,7 +351,6 @@
             <!-- Product 5: Minimalist Leather -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
-                    <!-- Replace with your image path -->
                     <img 
                         src="DSC00323.JPG" 
                         alt="Minimalist Faux-Leather Keychain" 
@@ -332,7 +375,6 @@
             <!-- Product 6: Photo Keychain -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
-                    <!-- Replace with your image path -->
                     <img 
                         src="DSC00324.JPG" 
                         alt="Custom Photo Polaroid Keychain" 
@@ -353,6 +395,215 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Hidden Products (Will be shown when "Show More" is clicked) -->
+            <div id="hiddenProducts" class="hidden-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 col-span-full">
+                
+                <!-- Product 7: Engraved Crystal -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                    <div class="product-image-container">
+                        <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Popular</span>
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
+                            <i class="fas fa-gem text-purple-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Engraved Crystal Clear</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Premium crystal clear resin with laser engraved messages inside.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$9.99</span>
+                            <button onclick="orderWhatsApp('Engraved Crystal')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8: Music Note -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                    <div class="product-image-container">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-50 to-orange-50">
+                            <i class="fas fa-music text-orange-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Musical Notes Collection</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Keychains with musical notes, perfect for music lovers and musicians.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$6.99</span>
+                            <button onclick="orderWhatsApp('Musical Notes')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9: Sports Theme -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                    <div class="product-image-container">
+                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">New</span>
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-50 to-blue-50">
+                            <i class="fas fa-football-ball text-green-500 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Sports Team Spirit</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Show your team pride with custom sports team logo keychains.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$7.25</span>
+                            <button onclick="orderWhatsApp('Sports Team')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10: Zodiac Signs -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                    <div class="product-image-container">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-50">
+                            <i class="fas fa-star-and-crescent text-indigo-500 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Zodiac Sign Collection</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Beautiful zodiac sign keychains with constellation patterns.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$6.75</span>
+                            <button onclick="orderWhatsApp('Zodiac Sign')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11: Book Lover -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                    <div class="product-image-container">
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-50 to-pink-50">
+                            <i class="fas fa-book text-red-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Book Lover's Special</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">For the bibliophiles - miniature books with your favorite quotes.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$5.99</span>
+                            <button onclick="orderWhatsApp('Book Lover')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12: Travel Memory -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                    <div class="product-image-container">
+                        <span class="absolute top-4 right-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Bestseller</span>
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-teal-50 to-blue-50">
+                            <i class="fas fa-plane text-teal-500 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Travel Memory Capsule</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Preserve sand, shells, or small souvenirs from your travels.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-primary">$8.50</span>
+                            <button onclick="orderWhatsApp('Travel Memory')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
+                                <i class="fab fa-whatsapp"></i> Order Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Products -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full coming-soon">
+                    <div class="product-image-container relative">
+                        <span class="coming-soon-label">Coming Soon</span>
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+                            <i class="fas fa-clock text-gray-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Glow in the Dark Series</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Magical keychains that glow in the dark with custom designs.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-400">TBA</span>
+                            <button class="bg-gray-300 text-gray-600 px-5 py-3 rounded-lg cursor-not-allowed flex items-center gap-2 font-medium" disabled>
+                                <i class="fas fa-clock"></i> Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full coming-soon">
+                    <div class="product-image-container relative">
+                        <span class="coming-soon-label">Coming Soon</span>
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+                            <i class="fas fa-clock text-gray-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Interactive LED Keychains</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Keychains with programmable LED lights and messages.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-400">TBA</span>
+                            <button class="bg-gray-300 text-gray-600 px-5 py-3 rounded-lg cursor-not-allowed flex items-center gap-2 font-medium" disabled>
+                                <i class="fas fa-clock"></i> Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full coming-soon">
+                    <div class="product-image-container relative">
+                        <span class="coming-soon-label">Coming Soon</span>
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
+                            <i class="fas fa-clock text-gray-400 text-6xl"></i>
+                        </div>
+                    </div>
+                    <div class="p-7 flex-grow">
+                        <h4 class="font-bold text-xl mb-3 text-gray-900">Multi-functional Smart Keychains</h4>
+                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Combining USB drives, bottle openers, and more in stylish designs.</p>
+                    </div>
+                    <div class="px-7 pb-7 mt-auto">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-400">TBA</span>
+                            <button class="bg-gray-300 text-gray-600 px-5 py-3 rounded-lg cursor-not-allowed flex items-center gap-2 font-medium" disabled>
+                                <i class="fas fa-clock"></i> Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Show More Button -->
+        <div class="text-center mt-12">
+            <button id="showMoreBtn" class="show-more-btn bg-primary/10 text-primary border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/20 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 mx-auto">
+                <span>Show More Products</span>
+                <i class="fas fa-chevron-down transition-transform duration-300"></i>
+            </button>
+            <p id="noMoreProducts" class="text-gray-500 mt-6 hidden">
+                <i class="fas fa-sparkles text-primary mr-2"></i>
+                More amazing products coming soon! Stay tuned.
+            </p>
         </div>
         
         <div class="text-center mt-16">
@@ -380,258 +631,4 @@
                         </div>
                         
                         <p class="text-gray-700 leading-relaxed">
-                            That passion turned into a business idea: Why should finding a special gift be hard? I discovered resin—the most effective and "life-saving" way to preserve cherished items. We make it easy to own a memory instead of waiting days at a store.
-                        </p>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-snowflake text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-2 text-gray-900">Life-Saving Preservation</h4>
-                                <p class="text-gray-600">Freeze time with high-grade resin that captures every petal and detail.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-gift text-primary"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg mb-2 text-gray-900">Gifting Made Easy</h4>
-                                <p class="text-gray-600">Skip the 4-day wait at stores. Get custom, meaningful gifts instantly.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="bg-secondary rounded-2xl p-8 shadow-lg">
-                        <div class="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                            <i class="fas fa-heart text-primary text-8xl opacity-30"></i>
-                        </div>
-                        <div class="mt-8 text-center">
-                            <h4 class="font-bold text-2xl mb-4 text-gray-900">Handmade with Passion</h4>
-                            <p class="text-gray-600 text-lg">Preserving your most cherished items since 2024.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Customer Reviews Section -->
-    <section id="reviews" class="py-20 px-6 bg-secondary">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h3 class="text-4xl font-bold text-gray-900 mb-4">What Our Community Says</h3>
-                <div class="flex items-center justify-center space-x-2 mb-8">
-                    <div class="rating-stars text-2xl">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <span class="text-xl font-bold text-gray-900">4.9/5 Rating</span>
-                </div>
-                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Real stories from people preserving their most cherished items.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="review-card">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="customer-avatar">
-                            S
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Sarah Jenkins</h4>
-                            <div class="rating-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-700 italic mb-6 leading-relaxed">
-                        "I sent in a petal from my anniversary bouquet and the result is stunning. It's so much better than going to a big store and waiting days for something generic."
-                    </p>
-                    
-                    <div class="mt-6 pt-6 border-t border-gray-100">
-                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Anniversary Collection</span>
-                    </div>
-                </div>
-                
-                <!-- Review 2 -->
-                <div class="review-card">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="customer-avatar">
-                            M
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Marcus T.</h4>
-                            <div class="rating-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-700 italic mb-6 leading-relaxed">
-                        "The resin is crystal clear. I love that it's made by a fellow student with so much care. My partner was speechless!"
-                    </p>
-                    
-                    <div class="mt-6 pt-6 border-t border-gray-100">
-                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Custom Order</span>
-                    </div>
-                </div>
-                
-                <!-- Review 3 -->
-                <div class="review-card">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="customer-avatar">
-                            A
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-lg">Amara L.</h4>
-                            <div class="rating-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p class="text-gray-700 italic mb-6 leading-relaxed">
-                        "Finally, a way to keep my graduation flowers forever. Keychain Studio is a lifesaver for meaningful gifts!"
-                    </p>
-                    
-                    <div class="mt-6 pt-6 border-t border-gray-100">
-                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Class of 2026</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#contact" class="inline-flex items-center text-primary font-semibold hover:underline text-lg">
-                    Share your story with us
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- Why Choose Us -->
-    <section class="py-16 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Keychain Studio</h3>
-                <p class="text-gray-600 max-w-2xl mx-auto">We combine craftsmanship with personalization to create meaningful accessories for your everyday life.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                <div class="p-8 rounded-2xl bg-secondary/50">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-truck text-primary text-2xl"></i>
-                    </div>
-                    <h5 class="font-bold text-xl mb-4 text-gray-900">Campus Delivery</h5>
-                    <p class="text-gray-600 leading-relaxed">Free delivery to all campus hostels within 24 hours. Convenient and reliable.</p>
-                </div>
-                <div class="p-8 rounded-2xl bg-secondary/50">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-hand-holding-heart text-primary text-2xl"></i>
-                    </div>
-                    <h5 class="font-bold text-xl mb-4 text-gray-900">Student Made</h5>
-                    <p class="text-gray-600 leading-relaxed">Support your fellow student. Each item is handmade with attention to detail and care.</p>
-                </div>
-                <div class="p-8 rounded-2xl bg-secondary/50">
-                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-palette text-primary text-2xl"></i>
-                    </div>
-                    <h5 class="font-bold text-xl mb-4 text-gray-900">Custom Orders</h5>
-                    <p class="text-gray-600 leading-relaxed">DM us for custom designs, colors, or bulk club orders. Your vision, our craft.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <footer id="contact" class="bg-primary text-white py-20 px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <h3 class="text-4xl font-bold mb-6">Ready to preserve your memories?</h3>
-            <p class="text-white/80 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">I can create keychains with any logo, photo, or cherished item. Just send me a message and we'll bring your memory to life!</p>
-            
-            <div class="flex justify-center space-x-10 mb-14">
-                <a href="www.instagram.com/epoxyfied_toothless" class="text-3xl hover:text-secondary transition-transform duration-300 hover:scale-110">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-3xl hover:text-secondary transition-transform duration-300 hover:scale-110">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://wa.me/7205049701" class="text-3xl hover:text-secondary transition-transform duration-300 hover:scale-110">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-            
-            <div class="border-t border-white/20 pt-10">
-                <p class="text-white/70 text-base">© 2024 Keychain Studio. Made with <i class="fas fa-heart text-accent mx-1"></i> by a Student for Students.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        /**
-         * Sends an automated message to WhatsApp
-         * @param {string} productName - The name of the item the user clicked
-         */
-        function orderWhatsApp(productName) {
-            const phoneNumber = "7205049701"; 
-            const message = encodeURIComponent(`Hi! I'm interested in buying the "${productName}" keychain from Keychain Studio. Is it still available?`);
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-        }
-        
-        // Add smooth scrolling for all anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Preload images for better user experience
-        window.addEventListener('load', function() {
-            const images = document.querySelectorAll('.product-image');
-            images.forEach(img => {
-                // This helps with image loading and error handling
-                if(img.complete && img.naturalHeight !== 0) {
-                    img.style.opacity = '1';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                            That passion turned into a business idea: Why should finding a special gift be hard? I discovered resin—the most effective and "life-saving
