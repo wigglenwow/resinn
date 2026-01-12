@@ -118,6 +118,49 @@
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
+        
+        /* Story section styles */
+        .story-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--primary);
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .review-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(109, 6, 30, 0.1);
+        }
+        
+        .customer-avatar {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .rating-stars {
+            color: #fbbf24;
+        }
     </style>
 </head>
 <body class="bg-secondary text-gray-800">
@@ -130,7 +173,8 @@
         </h1>
         <div class="space-x-6">
             <a href="#shop" class="text-sm font-medium hover:text-primary transition-colors duration-200">Shop</a>
-            <a href="#about" class="text-sm font-medium hover:text-primary transition-colors duration-200">About</a>
+            <a href="#story" class="text-sm font-medium hover:text-primary transition-colors duration-200">Our Story</a>
+            <a href="#reviews" class="text-sm font-medium hover:text-primary transition-colors duration-200">Reviews</a>
             <a href="#contact" class="text-sm font-medium hover:text-primary transition-colors duration-200">Contact</a>
         </div>
     </nav>
@@ -140,9 +184,9 @@
         <div class="absolute inset-0 bg-secondary z-0"></div>
         <div class="max-w-3xl mx-auto relative z-10">
             <span class="badge bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wide">Student Startup</span>
-            <h2 class="text-5xl font-bold mt-6 mb-8 leading-tight text-gray-900">Personalized Keychains<br>for your Everyday Carry.</h2>
-            <p class="text-gray-600 mb-10 text-lg leading-relaxed max-w-2xl mx-auto">Handmade on campus with attention to detail. Custom designs available. Free delivery to all campus hostels!</p>
-            <a href="#shop" class="btn-primary text-white px-10 py-4 rounded-lg font-semibold text-lg shadow-lg inline-block">View Collection</a>
+            <h2 class="text-5xl font-bold mt-6 mb-8 leading-tight text-gray-900">Preserve Your Memories<br>in Beautiful Keychains</h2>
+            <p class="text-gray-600 mb-10 text-lg leading-relaxed max-w-2xl mx-auto">Handmade with passion, preserving your most cherished items. Custom designs available. Free campus delivery!</p>
+            <a href="#shop" class="btn-primary text-white px-10 py-4 rounded-lg font-semibold text-lg shadow-lg inline-block">Shop Collection</a>
         </div>
     </header>
 
@@ -172,7 +216,7 @@
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">The Classic Name-Tag</h4>
-                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Durable acrylic, customized with your name or student ID. Simple and elegant.</p>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Durable acrylic, customized with your name or initials. Simple and elegant.</p>
                 </div>
                 <div class="px-7 pb-7 mt-auto">
                     <div class="flex justify-between items-center">
@@ -318,8 +362,182 @@
 
     <div class="section-divider"></div>
 
-    <!-- About / Why Choose Us -->
-    <section id="about" class="py-16 px-6 bg-white">
+    <!-- Our Story Section -->
+    <section id="story" class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="badge bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wide mb-4 inline-block">Our Origin</span>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-6">Our Story: From Memory to Masterpiece</h3>
+                    
+                    <div class="space-y-6">
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Keychain Studio began as a hobby when I was thinking of a perfect gift for my partner. When I was given a beautiful bouquet of flowers, I realized I needed a way to preserve that feeling forever.
+                        </p>
+                        
+                        <div class="story-quote my-8">
+                            "It wasn't just a bouquet; it was a memory I couldn't bear to let fade."
+                        </div>
+                        
+                        <p class="text-gray-700 leading-relaxed">
+                            That passion turned into a business idea: Why should finding a special gift be hard? I discovered resin—the most effective and "life-saving" way to preserve cherished items. We make it easy to own a memory instead of waiting days at a store.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-snowflake text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-gray-900">Life-Saving Preservation</h4>
+                                <p class="text-gray-600">Freeze time with high-grade resin that captures every petal and detail.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-gift text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-gray-900">Gifting Made Easy</h4>
+                                <p class="text-gray-600">Skip the 4-day wait at stores. Get custom, meaningful gifts instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-secondary rounded-2xl p-8 shadow-lg">
+                        <div class="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                            <i class="fas fa-heart text-primary text-8xl opacity-30"></i>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <h4 class="font-bold text-2xl mb-4 text-gray-900">Handmade with Passion</h4>
+                            <p class="text-gray-600 text-lg">Preserving your most cherished items since 2024.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-20 px-6 bg-secondary">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">What Our Community Says</h3>
+                <div class="flex items-center justify-center space-x-2 mb-8">
+                    <div class="rating-stars text-2xl">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">4.9/5 Rating</span>
+                </div>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">Real stories from people preserving their most cherished items.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="customer-avatar">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Sarah Jenkins</h4>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 italic mb-6 leading-relaxed">
+                        "I sent in a petal from my anniversary bouquet and the result is stunning. It's so much better than going to a big store and waiting days for something generic."
+                    </p>
+                    
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Anniversary Collection</span>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="customer-avatar">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Marcus T.</h4>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 italic mb-6 leading-relaxed">
+                        "The resin is crystal clear. I love that it's made by a fellow student with so much care. My partner was speechless!"
+                    </p>
+                    
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Custom Order</span>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="customer-avatar">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Amara L.</h4>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-700 italic mb-6 leading-relaxed">
+                        "Finally, a way to keep my graduation flowers forever. Keychain Studio is a lifesaver for meaningful gifts!"
+                    </p>
+                    
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                        <span class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-semibold">Class of 2026</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-flex items-center text-primary font-semibold hover:underline text-lg">
+                    Share your story with us
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- Why Choose Us -->
+    <section class="py-16 px-6 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
                 <h3 class="text-3xl font-bold text-gray-900 mb-4">Why Choose Keychain Studio</h3>
@@ -355,8 +573,8 @@
     <!-- Contact -->
     <footer id="contact" class="bg-primary text-white py-20 px-6">
         <div class="max-w-5xl mx-auto text-center">
-            <h3 class="text-4xl font-bold mb-6">Ready to personalize your keys?</h3>
-            <p class="text-white/80 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">I can create keychains with any logo, photo, or text. Just send me a message and we'll bring your design to life!</p>
+            <h3 class="text-4xl font-bold mb-6">Ready to preserve your memories?</h3>
+            <p class="text-white/80 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">I can create keychains with any logo, photo, or cherished item. Just send me a message and we'll bring your memory to life!</p>
             
             <div class="flex justify-center space-x-10 mb-14">
                 <a href="www.instagram.com/epoxyfied_toothless" class="text-3xl hover:text-secondary transition-transform duration-300 hover:scale-110">
