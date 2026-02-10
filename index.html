@@ -7,213 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #6D061E;
-            --secondary: #faf4e8;
-            --accent: #8D3B47;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -0.015em;
-        }
-        
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            letter-spacing: -0.02em;
-        }
-        
-        .product-card:hover { 
-            transform: translateY(-8px); 
-            transition: all 0.3s ease;
-            box-shadow: 0 15px 30px rgba(109, 6, 30, 0.1);
-        }
-        
-        .glass { 
-            background: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(10px); 
-        }
-        
-        html { 
-            scroll-behavior: smooth; 
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background-color: #5a0519;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(109, 6, 30, 0.2);
-        }
-        
-        .text-primary {
-            color: var(--primary);
-        }
-        
-        .bg-primary {
-            background-color: var(--primary);
-        }
-        
-        .border-primary {
-            border-color: var(--primary);
-        }
-        
-        .bg-secondary {
-            background-color: var(--secondary);
-        }
-        
-        .text-accent {
-            color: var(--accent);
-        }
-        
-        .bg-accent {
-            background-color: var(--accent);
-        }
-        
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(109, 6, 30, 0.2), transparent);
-            margin: 3rem auto;
-            max-width: 800px;
-        }
-        
-        .badge {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-        
-        /* Image cropping and fitting */
-        .product-image-container {
-            height: 320px;
-            overflow: hidden;
-            position: relative;
-            background-color: var(--secondary);
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: transform 0.5s ease;
-        }
-        
-        .product-card:hover .product-image {
-            transform: scale(1.05);
-        }
-        
-        /* Loading state for images */
-        .image-loading {
-            background: linear-gradient(90deg, var(--secondary) 25%, #e8e0d0 50%, var(--secondary) 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
-        }
-        
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        
-        /* Story section styles */
-        .story-quote {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.25rem;
-            line-height: 1.8;
-            color: var(--primary);
-            position: relative;
-            padding-left: 2rem;
-            border-left: 3px solid var(--accent);
-        }
-        
-        .review-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .review-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(109, 6, 30, 0.1);
-        }
-        
-        .customer-avatar {
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: 50%;
-            background-color: var(--primary);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .rating-stars {
-            color: #fbbf24;
-        }
-        
-        /* Show more button animation */
-        .show-more-btn {
-            transition: all 0.3s ease;
-        }
-        
-        .show-more-btn:hover i {
-            transform: translateY(3px);
-        }
-        
-        .hidden-products {
-            display: none;
-            animation: fadeIn 0.5s ease forwards;
-        }
-        
-        .hidden-products.show {
-            display: grid;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .coming-soon {
-            opacity: 0.9;
-            filter: grayscale(20%);
-        }
-        
-        .coming-soon-label {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(109, 6, 30, 0.9);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-weight: 600;
-            z-index: 10;
-            font-size: 0.875rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-secondary text-gray-800">
 
-    <!-- Navigation -->
     <nav class="sticky top-0 z-50 glass border-b border-gray-200 py-4 px-6 flex justify-between items-center">
         <h1 class="text-xl font-bold tracking-tight">
             <span class="text-primary">KEYCHAIN</span>
@@ -227,7 +24,6 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <header class="py-20 px-6 text-center relative overflow-hidden">
         <div class="absolute inset-0 bg-secondary z-0"></div>
         <div class="max-w-3xl mx-auto relative z-10">
@@ -238,7 +34,6 @@
         </div>
     </header>
 
-    <!-- Product Grid -->
     <section id="shop" class="py-16 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-12">
             <h3 class="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center">
@@ -247,19 +42,11 @@
             <p class="text-gray-600 max-w-2xl mx-auto">Each keychain is crafted with care, combining functionality with personal expression.</p>
         </div>
         
-        <!-- Grid: 1 column on mobile, 2 on tablet, 3 on desktop -->
         <div class="product-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            
-            <!-- Product 1 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
                     <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">New</span>
-                    <img 
-                        src="DSC00296.JPG" 
-                        alt="The Classic Name-Tag Keychain" 
-                        class="product-image"
-                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Classic Name-Tag</text></svg>';"
-                    >
+                    <img src="assets/images/products/DSC00296.JPG" alt="The Classic Name-Tag Keychain" class="product-image" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'320\' viewBox=\'0 0 400 320\'><rect width=\'400\' height=\'320\' fill=\'%23faf4e8\'/><text x=\'50%\' y=\'50%\' font-family=\'Arial\' font-size=\'24\' fill=\'%236D061E\' text-anchor=\'middle\' dy=\'.3em\'>Classic Name-Tag</text></svg>';">
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">The Classic Name-Tag</h4>
@@ -275,15 +62,9 @@
                 </div>
             </div>
 
-            <!-- Product 2 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
-                    <img 
-                        src="DSC00302.JPG" 
-                        alt="Bestie Matching Set Keychains" 
-                        class="product-image"
-                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Bestie Set</text></svg>';"
-                    >
+                    <img src="assets/images/products/DSC00302.JPG" alt="Bestie Matching Set Keychains" class="product-image" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'320\' viewBox=\'0 0 400 320\'><rect width=\'400\' height=\'320\' fill=\'%23faf4e8\'/><text x=\'50%\' y=\'50%\' font-family=\'Arial\' font-size=\'24\' fill=\'%236D061E\' text-anchor=\'middle\' dy=\'.3em\'>Bestie Set</text></svg>';">
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Bestie Matching Set</h4>
@@ -299,15 +80,9 @@
                 </div>
             </div>
 
-            <!-- Product 3 -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
-                    <img 
-                        src="DSC00314.JPG" 
-                        alt="Class of 2026 Graduation Keychain" 
-                        class="product-image"
-                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Grad Special</text></svg>';"
-                    >
+                    <img src="assets/images/products/DSC00314.JPG" alt="Class of 2026 Graduation Keychain" class="product-image" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'320\' viewBox=\'0 0 400 320\'><rect width=\'400\' height=\'320\' fill=\'%23faf4e8\'/><text x=\'50%\' y=\'50%\' font-family=\'Arial\' font-size=\'24\' fill=\'%236D061E\' text-anchor=\'middle\' dy=\'.3em\'>Grad Special</text></svg>';">
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Class of 2026 Special</h4>
@@ -323,16 +98,10 @@
                 </div>
             </div>
 
-            <!-- Product 4: Anime Theme -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
                     <span class="absolute top-4 right-4 bg-accent text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Bestseller</span>
-                    <img 
-                        src="DSC00318.JPG" 
-                        alt="Anime Essence Collection Keychain" 
-                        class="product-image"
-                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Anime Essence</text></svg>';"
-                    >
+                    <img src="assets/images/products/DSC00318.JPG" alt="Anime Essence Collection Keychain" class="product-image" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'320\' viewBox=\'0 0 400 320\'><rect width=\'400\' height=\'320\' fill=\'%23faf4e8\'/><text x=\'50%\' y=\'50%\' font-family=\'Arial\' font-size=\'24\' fill=\'%236D061E\' text-anchor=\'middle\' dy=\'.3em\'>Anime Essence</text></svg>';">
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Anime Essence Collection</h4>
@@ -348,15 +117,9 @@
                 </div>
             </div>
 
-            <!-- Product 5: Minimalist Leather -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
-                    <img 
-                        src="DSC00323.JPG" 
-                        alt="Minimalist Faux-Leather Keychain" 
-                        class="product-image"
-                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Minimalist Leather</text></svg>';"
-                    >
+                    <img src="assets/images/products/DSC00323.JPG" alt="Minimalist Faux-Leather Keychain" class="product-image" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'320\' viewBox=\'0 0 400 320\'><rect width=\'400\' height=\'320\' fill=\'%23faf4e8\'/><text x=\'50%\' y=\'50%\' font-family=\'Arial\' font-size=\'24\' fill=\'%236D061E\' text-anchor=\'middle\' dy=\'.3em\'>Minimalist Leather</text></svg>';">
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Minimalist Faux-Leather</h4>
@@ -372,15 +135,9 @@
                 </div>
             </div>
 
-            <!-- Product 6: Photo Keychain -->
             <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                 <div class="product-image-container">
-                    <img 
-                        src="DSC00324.JPG" 
-                        alt="Custom Photo Polaroid Keychain" 
-                        class="product-image"
-                        onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"320\" viewBox=\"0 0 400 320\"><rect width=\"400\" height=\"320\" fill=\"%23faf4e8\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"%236D061E\" text-anchor=\"middle\" dy=\".3em\">Photo Polaroid</text></svg>';"
-                    >
+                    <img src="assets/images/products/DSC00324.JPG" alt="Custom Photo Polaroid Keychain" class="product-image" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'320\' viewBox=\'0 0 400 320\'><rect width=\'400\' height=\'320\' fill=\'%23faf4e8\'/><text x=\'50%\' y=\'50%\' font-family=\'Arial\' font-size=\'24\' fill=\'%236D061E\' text-anchor=\'middle\' dy=\'.3em\'>Photo Polaroid</text></svg>';">
                 </div>
                 <div class="p-7 flex-grow">
                     <h4 class="font-bold text-xl mb-3 text-gray-900">Custom Photo Polaroid</h4>
@@ -396,10 +153,7 @@
                 </div>
             </div>
 
-            <!-- Hidden Products (Will be shown when "Show More" is clicked) -->
             <div id="hiddenProducts" class="hidden-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 col-span-full">
-                
-                <!-- Product 7: Engraved Crystal -->
                 <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
                     <div class="product-image-container">
                         <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Popular</span>
@@ -420,181 +174,9 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Product 8: Music Note -->
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container">
-                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-50 to-orange-50">
-                            <i class="fas fa-music text-orange-400 text-6xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Musical Notes Collection</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Keychains with musical notes, perfect for music lovers and musicians.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-primary">$6.99</span>
-                            <button onclick="orderWhatsApp('Musical Notes')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
-                                <i class="fab fa-whatsapp"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 9: Sports Theme -->
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container">
-                        <span class="absolute top-4 left-4 bg-accent text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">New</span>
-                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-green-50 to-blue-50">
-                            <i class="fas fa-football-ball text-green-500 text-6xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Sports Team Spirit</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Show your team pride with custom sports team logo keychains.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-primary">$7.25</span>
-                            <button onclick="orderWhatsApp('Sports Team')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
-                                <i class="fab fa-whatsapp"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 10: Zodiac Signs -->
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container">
-                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-indigo-50 to-purple-50">
-                            <i class="fas fa-star-and-crescent text-indigo-500 text-6xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Zodiac Sign Collection</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Beautiful zodiac sign keychains with constellation patterns.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-primary">$6.75</span>
-                            <button onclick="orderWhatsApp('Zodiac Sign')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
-                                <i class="fab fa-whatsapp"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 11: Book Lover -->
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container">
-                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-50 to-pink-50">
-                            <i class="fas fa-book text-red-400 text-6xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Book Lover's Special</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">For the bibliophiles - miniature books with your favorite quotes.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-primary">$5.99</span>
-                            <button onclick="orderWhatsApp('Book Lover')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
-                                <i class="fab fa-whatsapp"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 12: Travel Memory -->
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container">
-                        <span class="absolute top-4 right-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Bestseller</span>
-                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-teal-50 to-blue-50">
-                            <i class="fas fa-plane text-teal-500 text-6xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Travel Memory Capsule</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Preserve sand, shells, or small souvenirs from your travels.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-primary">$8.50</span>
-                            <button onclick="orderWhatsApp('Travel Memory')" class="bg-primary text-white px-5 py-3 rounded-lg hover:bg-gray-900 transition-all duration-300 flex items-center gap-2 font-medium">
-                                <i class="fab fa-whatsapp"></i> Order Now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Coming Soon Products -->
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full coming-soon">
-                    <div class="product-image-container relative">
-                        <span class="coming-soon-label">Coming Soon</span>
-                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
-                            <i class="fas fa-clock text-gray-400 text-6xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Glow in the Dark Series</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Magical keychains that glow in the dark with custom designs.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-gray-400">TBA</span>
-                            <button class="bg-gray-300 text-gray-600 px-5 py-3 rounded-lg cursor-not-allowed flex items-center gap-2 font-medium" disabled>
-                                <i class="fas fa-clock"></i> Coming Soon
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full coming-soon">
-                    <div class="product-image-container relative">
-                        <span class="coming-soon-label">Coming Soon</span>
-                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
-                            <i class="fas fa-clock text-gray-400 text-6xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Interactive LED Keychains</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Keychains with programmable LED lights and messages.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-gray-400">TBA</span>
-                            <button class="bg-gray-300 text-gray-600 px-5 py-3 rounded-lg cursor-not-allowed flex items-center gap-2 font-medium" disabled>
-                                <i class="fas fa-clock"></i> Coming Soon
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full coming-soon">
-                    <div class="product-image-container relative">
-                        <span class="coming-soon-label">Coming Soon</span>
-                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200">
-                            <i class="fas fa-clock text-gray-400 text-6xl"></i>
-                        </div>
-                    </div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Multi-functional Smart Keychains</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Combining USB drives, bottle openers, and more in stylish designs.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto">
-                        <div class="flex justify-between items-center">
-                            <span class="text-2xl font-bold text-gray-400">TBA</span>
-                            <button class="bg-gray-300 text-gray-600 px-5 py-3 rounded-lg cursor-not-allowed flex items-center gap-2 font-medium" disabled>
-                                <i class="fas fa-clock"></i> Coming Soon
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         
-        <!-- Show More Button -->
         <div class="text-center mt-12">
             <button id="showMoreBtn" class="show-more-btn bg-primary/10 text-primary border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/20 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 mx-auto">
                 <span>Show More Products</span>
@@ -605,30 +187,32 @@
                 More amazing products coming soon! Stay tuned.
             </p>
         </div>
-        
-        <div class="text-center mt-16">
-            <p class="text-gray-600 text-lg">Want something truly unique? <a href="#contact" class="text-primary font-semibold hover:underline">Contact us for custom designs</a>.</p>
-        </div>
     </section>
 
     <div class="section-divider"></div>
 
-    <!-- Our Story Section -->
     <section id="story" class="py-20 px-6 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="badge bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wide mb-4 inline-block">Our Origin</span>
                     <h3 class="text-4xl font-bold text-gray-900 mb-6">Our Story: From Memory to Masterpiece</h3>
-                    
                     <div class="space-y-6">
                         <p class="text-gray-700 leading-relaxed text-lg">
                             Keychain Studio began as a hobby when I was thinking of a perfect gift for my partner. When I was given a beautiful bouquet of flowers, I realized I needed a way to preserve that feeling forever.
                         </p>
-                        
                         <div class="story-quote my-8">
                             "It wasn't just a bouquet; it was a memory I couldn't bear to let fade."
                         </div>
-                        
                         <p class="text-gray-700 leading-relaxed">
-                            That passion turned into a business idea: Why should finding a special gift be hard? I discovered resin—the most effective and "life-saving
+                            That passion turned into a business idea: Why should finding a special gift be hard? I discovered resin—the most effective and "life-saving" way to keep moments alive.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
