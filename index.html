@@ -35,6 +35,18 @@
     </header>
 
     <section id="shop" class="py-16 px-6 max-w-7xl mx-auto">
+        
+        <div class="mb-16 bg-gradient-to-r from-[#6D061E] to-[#8D3B47] rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-between shadow-xl">
+            <div class="text-center md:text-left mb-6 md:mb-0">
+                <span class="badge bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Limited Time Bundle</span>
+                <h4 class="text-3xl font-bold mt-2">The Valentine's Duo</h4>
+                <p class="text-white/80 mt-2">Get our signature "Split Heart" pair for just ₹399. Perfect for you and your favorite person.</p>
+            </div>
+            <button onclick="orderWhatsApp('Valentine Split Heart Bundle')" class="bg-white text-primary px-8 py-3 rounded-xl font-bold hover:bg-secondary transition-colors">
+                Claim Bundle
+            </button>
+        </div>
+
         <div class="text-center mb-12">
             <h3 class="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center">
                 <i class="fas fa-stars text-primary mr-3"></i> Shop Our Collection
@@ -163,51 +175,52 @@
                 <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹179</span>
                 <button onclick="orderWhatsApp('The Prism Pillar')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
             </div>
+        </div>
 
-            <div id="hiddenProducts" class="hidden-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 col-span-full">
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container"><img src="assets/images/products/split_heart.jpg" alt="The Split Heart" class="product-image"></div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">The Split Heart</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Modern minimalist charm—half milk-white, half ruby-red.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹249</span>
-                    <button onclick="orderWhatsApp('The Split Heart')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+        <div id="hiddenProducts" class="hidden-products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 col-span-full mt-10">
+            
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                <div class="product-image-container"><img src="assets/images/products/split_heart.jpg" alt="The Split Heart" class="product-image"></div>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">The Split Heart (Duo)</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">A modern take on the classic symbol—half milk-white, half ruby-red. Sold as a pair.</p>
                 </div>
+                <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹399</span>
+                <button onclick="orderWhatsApp('Split Heart Duo Pair')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            </div>
 
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container"><img src="assets/images/products/sundusted_star.jpg" alt="Sun-Dusted Star" class="product-image"></div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Sun-Dusted Star</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Gold-hardware set featuring a glitter star and half-filled gold bar.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹199</span>
-                    <button onclick="orderWhatsApp('Sun-Dusted Star')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                <div class="product-image-container"><img src="assets/images/products/sundusted_star.jpg" alt="Sun-Dusted Star" class="product-image"></div>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Sun-Dusted Star</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Gold-hardware set featuring a glitter star and half-filled gold bar.</p>
                 </div>
+                <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹199</span>
+                <button onclick="orderWhatsApp('Sun-Dusted Star')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            </div>
 
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container"><img src="assets/images/products/emerald_speckle.jpg" alt="Emerald Speckle" class="product-image"></div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">Emerald Speckle</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Oval charm featuring a mix of green and reddish-orange glitter.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹179</span>
-                    <button onclick="orderWhatsApp('Emerald Speckle')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                <div class="product-image-container"><img src="assets/images/products/emerald_speckle.jpg" alt="Emerald Speckle" class="product-image"></div>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Emerald Speckle</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Oval charm featuring a mix of green and reddish-orange glitter.</p>
                 </div>
+                <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹179</span>
+                <button onclick="orderWhatsApp('Emerald Speckle')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            </div>
 
-                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
-                    <div class="product-image-container"><img src="assets/images/products/duo_heart.jpg" alt="The Duo Heart" class="product-image"></div>
-                    <div class="p-7 flex-grow">
-                        <h4 class="font-bold text-xl mb-3 text-gray-900">The Duo Heart</h4>
-                        <p class="text-gray-600 text-base mb-4 leading-relaxed">Two small, solid vibrant red hearts on a silver chain.</p>
-                    </div>
-                    <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹149</span>
-                    <button onclick="orderWhatsApp('The Duo Heart')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full">
+                <div class="product-image-container"><img src="assets/images/products/duo_heart.jpg" alt="The Duo Heart" class="product-image"></div>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">The Duo Heart</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Two small, solid vibrant red hearts on a silver chain.</p>
                 </div>
+                <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹149</span>
+                <button onclick="orderWhatsApp('The Duo Heart')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
             </div>
         </div>
 
-        <div class="text-center mt-12">
+        <div class="text-center mt-12 mb-20">
             <button id="showMoreBtn" class="show-more-btn bg-primary/10 text-primary border-2 border-primary/30 hover:border-primary/50 hover:bg-primary/20 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center gap-3 mx-auto">
                 <span>Show More Products</span>
                 <i class="fas fa-chevron-down transition-transform duration-300"></i>
@@ -216,6 +229,23 @@
                 <i class="fas fa-sparkles text-primary mr-2"></i>
                 More amazing products coming soon! Stay tuned.
             </p>
+        </div>
+
+        <div id="phone-covers" class="mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100">
+                <div class="h-[400px] lg:h-full">
+                    <img src="assets/images/products/phone_cover_sample.jpg" alt="Custom Phone Covers" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&q=80&w=800'">
+                </div>
+                <div class="p-10 lg:col-span-2 flex flex-col justify-center text-center lg:text-left">
+                    <span class="text-primary font-bold tracking-widest uppercase text-sm">Now Available</span>
+                    <h3 class="text-4xl font-bold text-gray-900 mt-4 mb-6">Phone Cover Studio</h3>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">Bring your aesthetic to your most-used device. We create custom-to-model resin covers based on your favorite colors and textures. Design yours today!</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+                        <span class="text-3xl font-bold text-primary">Custom Orders Only</span>
+                        <button onclick="orderWhatsApp('Custom Phone Cover Inquiry')" class="bg-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-gray-900 transition-all shadow-lg">Design Your Own Cover</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -231,7 +261,7 @@
                         <p class="text-gray-700 leading-relaxed text-lg">
                             Keychain Studio began as a hobby when I was thinking of a perfect gift for my partner. When I was given a beautiful bouquet of flowers, I realized I needed a way to preserve that feeling forever.
                         </p>
-                        <div class="story-quote my-8">
+                        <div class="story-quote my-8 p-4 border-l-4 border-primary bg-primary/5 italic">
                             "It wasn't just a bouquet; it was a memory I couldn't bear to let fade."
                         </div>
                         <p class="text-gray-700 leading-relaxed">
@@ -242,85 +272,86 @@
             </div>
         </div>
     </section>
+
     <section id="reviews" class="py-20 px-6 bg-secondary">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h3 class="text-3xl font-bold text-gray-900 mb-4">What Our Campus Says</h3>
-            <p class="text-gray-600">Real feedback from the NIT Rourkela community.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="review-card">
-                <div class="rating-stars mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-700 italic mb-6">"The Golden Hour keychain is even more beautiful in person. You can really see the effort put into the pearlescent finish!"</p>
-                <div class="flex items-center gap-4">
-                    <div class="customer-avatar">A</div>
-                    <div>
-                        <h5 class="font-bold text-gray-900">Ananya R.</h5>
-                        <p class="text-xs text-gray-500 uppercase">Architecture Student</p>
-                    </div>
-                </div>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">What Our Campus Says</h3>
+                <p class="text-gray-600">Real feedback from the NIT Rourkela community.</p>
             </div>
-
-            <div class="review-card">
-                <div class="rating-stars mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-700 italic mb-6">"Bought the Autumn Bond set for me and my roommate. The packaging was so neat and delivery on campus was super fast."</p>
-                <div class="flex items-center gap-4">
-                    <div class="customer-avatar">S</div>
-                    <div>
-                        <h5 class="font-bold text-gray-900">Sameer K.</h5>
-                        <p class="text-xs text-gray-500 uppercase">Mechanical Eng.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="review-card">
-                <div class="rating-stars mb-4">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="text-gray-700 italic mb-6">"Love the wigglenwow aesthetic! It's rare to find such high-quality handmade art right here in the hostel."</p>
-                <div class="flex items-center gap-4">
-                    <div class="customer-avatar">P</div>
-                    <div>
-                        <h5 class="font-bold text-gray-900">Priya S.</h5>
-                        <p class="text-xs text-gray-500 uppercase">MSc Mathematics</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    <section id="contact" class="py-20 px-6 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-        <h3 class="text-3xl font-bold text-gray-900 mb-6">Let's Connect</h3>
-        <p class="text-gray-600 mb-10 text-lg">Follow the journey, watch the process, and see how your keychains are made.</p>
-        
-        <div class="flex flex-wrap justify-center gap-6">
-            <a href="https://www.instagram.com/wigglenwow" target="_blank" class="flex items-center gap-3 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg">
-                <i class="fab fa-instagram text-2xl"></i>
-                <span>@wigglenwow</span>
-            </a>
             
-            <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank" class="flex items-center gap-3 bg-[#FF0000] text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg">
-                <i class="fab fa-youtube text-2xl"></i>
-                <span>Watch the Process</span>
-            </a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"The Golden Hour keychain is even more beautiful in person. You can really see the effort put into the pearlescent finish!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">A</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900">Ananya R.</h5>
+                            <p class="text-xs text-gray-500 uppercase">Architecture Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"Bought the Autumn Bond set for me and my roommate. The packaging was so neat and delivery on campus was super fast."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">S</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900">Sameer K.</h5>
+                            <p class="text-xs text-gray-500 uppercase">Mechanical Eng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-6">"Love the wigglenwow aesthetic! It's rare to find such high-quality handmade art right here in the hostel."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">P</div>
+                        <div>
+                            <h5 class="font-bold text-gray-900">Priya S.</h5>
+                            <p class="text-xs text-gray-500 uppercase">MSc Mathematics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="mt-16 pt-10 border-t border-gray-100">
-            <p class="text-sm text-gray-400">
-                Founded by a Mathematics student at NIT Rourkela.<br>
-                Handmade with ❤️ in Odisha.
-            </p>
+    </section>
+
+    <section id="contact" class="py-20 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold text-gray-900 mb-6">Let's Connect</h3>
+            <p class="text-gray-600 mb-10 text-lg">Follow the journey, watch the process, and see how your keychains are made.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="https://www.instagram.com/wigglenwow" target="_blank" class="flex items-center gap-3 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg">
+                    <i class="fab fa-instagram text-2xl"></i>
+                    <span>@wigglenwow</span>
+                </a>
+                
+                <a href="#" target="_blank" class="flex items-center gap-3 bg-[#FF0000] text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg">
+                    <i class="fab fa-youtube text-2xl"></i>
+                    <span>Watch the Process</span>
+                </a>
+            </div>
+            
+            <div class="mt-16 pt-10 border-t border-gray-100">
+                <p class="text-sm text-gray-400">
+                    Founded by a Mathematics student at NIT Rourkela.<br>
+                    Handmade with ❤️ in Odisha.
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <script src="js/script.js"></script>
 </body>
 </html>
-
