@@ -78,7 +78,8 @@ html {
 }
 
 .product-image-container {
-    height: 320px;
+    height: 350px; /* This sets a uniform 'frame' height for all products */
+    width: 100%;
     overflow: hidden;
     position: relative;
     background-color: var(--secondary);
@@ -87,8 +88,10 @@ html {
 .product-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    /* This is the magic line: it fills the box without stretching */
+    object-fit: cover; 
+    /* This ensures the middle of the photo is always visible */
+    object-position: center; 
     transition: transform 0.5s ease;
 }
 
