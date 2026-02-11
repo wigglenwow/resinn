@@ -72,3 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
  * (You can add logic here for a shopping cart or dark mode later)
  */
 console.log("Keychain Studio JS loaded successfully. 🚀");
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
