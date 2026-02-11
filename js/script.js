@@ -1,6 +1,6 @@
 /**
  * KEYCHAIN STUDIO - Main Script
- * Handles WhatsApp Integration and UI Interactions
+ * Handles WhatsApp Integration, UI Interactions, and Navigation
  */
 
 /**
@@ -12,9 +12,9 @@ function orderWhatsApp(productName) {
     const phoneNumber = "917205049701"; 
     
     // Customizes the message based on the button clicked
-    const message = `Hi! I'm interested in ordering the "${productName}" keychain from your shop. Could you please provide more details on how to customize and pay?`;
+    const message = `Hi! I'm interested in ordering: "${productName}". Can you tell me more about it?`;
     
-    // Encodes the message to be URL-safe (converts spaces to %20, etc.)
+    // Encodes the message to be URL-safe
     const encodedMessage = encodeURIComponent(message);
     
     // Construct the final URL
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Hides the "Show More" button
             showMoreBtn.style.display = 'none';
             
-            // Shows the "Stay Tuned" message
+            // Shows the "Stay Tuned" message if it exists
             if (noMoreProducts) {
                 noMoreProducts.classList.remove('hidden');
             }
@@ -51,8 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Smooth Scrolling for Navigation ---
-    // (Optional: Tailwind's scroll-behavior: smooth handles most of this,
-    // but this ensures all anchor links work perfectly.)
+    // Ensures clicking "Reviews", "Story", etc. scrolls smoothly down the page
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -67,21 +66,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-/**
- * 3. Future Expansion Placeholder
- * (You can add logic here for a shopping cart or dark mode later)
- */
 console.log("Keychain Studio JS loaded successfully. 🚀");
-
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
