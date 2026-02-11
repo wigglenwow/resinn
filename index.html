@@ -34,18 +34,66 @@
         </div>
     </header>
 
-    <section id="shop" class="py-16 px-6 max-w-7xl mx-auto">
-        
-        <div class="mb-16 bg-gradient-to-r from-[#6D061E] to-[#8D3B47] rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-between shadow-xl">
-            <div class="text-center md:text-left mb-6 md:mb-0">
-                <span class="badge bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Limited Time Bundle</span>
-                <h4 class="text-3xl font-bold mt-2">The Valentine's Duo</h4>
-                <p class="text-white/80 mt-2">Get our signature "Split Heart" pair for just ₹399. Perfect for you and your favorite person.</p>
-            </div>
-            <button onclick="orderWhatsApp('Valentine Split Heart Bundle')" class="bg-white text-primary px-8 py-3 rounded-xl font-bold hover:bg-secondary transition-colors">
-                Claim Bundle
-            </button>
+   <section id="shop" class="py-16 px-6 max-w-7xl mx-auto">
+    
+    <div class="mb-16 bg-gradient-to-r from-[#6D061E] to-[#8D3B47] rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-between shadow-xl">
+        <div class="text-center md:text-left mb-6 md:mb-0">
+            <span class="badge bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Limited Time Bundle</span>
+            <h4 class="text-3xl font-bold mt-2">The Valentine's Duo</h4>
+            <p class="text-white/80 mt-2">Get our signature "Split Heart" pair for just ₹399. Perfect for you and your favorite person.</p>
         </div>
+        <button onclick="orderWhatsApp('Valentine Split Heart Bundle')" class="bg-white text-primary px-8 py-3 rounded-xl font-bold hover:bg-secondary transition-colors">
+            Claim Bundle
+        </button>
+    </div>
+
+    <div class="mb-20">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+            <i class="fas fa-heart text-primary mr-3"></i> Valentine's Exclusives
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md border-2 border-primary/10 flex flex-col h-full">
+                <div class="product-image-container">
+                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Valentine Special</span>
+                    <img src="assets/images/products/valentine_1.jpg" alt="Valentine Special 1" class="product-image">
+                </div>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Sweetheart Bloom</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Preserved petals in a deep ruby resin heart.</p>
+                </div>
+                <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹449</span>
+                <button onclick="orderWhatsApp('Valentine Sweetheart Bloom')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            </div>
+
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md border-2 border-primary/10 flex flex-col h-full">
+                <div class="product-image-container">
+                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Valentine Special</span>
+                    <img src="assets/images/products/valentine_2.jpg" alt="Valentine Special 2" class="product-image">
+                </div>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Cupid’s Spark</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">A mix of gold flakes and crimson swirls for a romantic glow.</p>
+                </div>
+                <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹449</span>
+                <button onclick="orderWhatsApp('Valentine Cupids Spark')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            </div>
+
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-md border-2 border-primary/10 flex flex-col h-full">
+                <div class="product-image-container">
+                    <span class="absolute top-4 left-4 bg-primary text-white px-3 py-1 text-xs rounded-full font-bold badge z-10">Valentine Special</span>
+                    <img src="assets/images/products/valentine_3.jpg" alt="Valentine Special 3" class="product-image">
+                </div>
+                <div class="p-7 flex-grow">
+                    <h4 class="font-bold text-xl mb-3 text-gray-900">Forever Yours Set</h4>
+                    <p class="text-gray-600 text-base mb-4 leading-relaxed">Customizable initials embedded in high-clarity resin.</p>
+                </div>
+                <div class="px-7 pb-7 mt-auto"><div class="flex justify-between items-center"><span class="text-2xl font-bold text-primary">₹449</span>
+                <button onclick="orderWhatsApp('Valentine Forever Yours')" class="bg-primary text-white px-5 py-3 rounded-lg flex items-center gap-2 font-medium"><i class="fab fa-whatsapp"></i> Order Now</button></div></div>
+            </div>
+
+        </div>
+    </div>
 
         <div class="text-center mb-12">
             <h3 class="text-3xl font-bold text-gray-900 mb-4 flex items-center justify-center">
@@ -355,3 +403,4 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
